@@ -1,10 +1,9 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     kotlin("jvm") version "1.9.0"
+    id("maven-publish")
 }
 
-group = "dev.hlwgroup"
+group = "dev.hlwgroup.ktor"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -17,10 +16,27 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "dev.hlwgroup.ktor"
+            artifactId = "ktor-response-cache"
+            version = "1.0.0"
+
+            from(components["java"])
+        }
+    }
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 tasks.test {
     useJUnitPlatform()
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+kotlin {
+    jvmToolchain(17)
 }
