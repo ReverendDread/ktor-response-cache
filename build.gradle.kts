@@ -3,7 +3,7 @@ plugins {
     id("maven-publish")
 }
 
-group = "dev.hlwgroup.ktor"
+group = "com.reverenddread.ktor"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -19,7 +19,7 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "dev.hlwgroup.ktor"
+            groupId = "com.reverenddread.ktor"
             artifactId = "ktor-response-cache"
             version = "1.0.0"
 
