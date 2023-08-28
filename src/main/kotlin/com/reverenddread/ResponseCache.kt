@@ -1,8 +1,8 @@
-package dev.hlwgroup
+package com.reverenddread
 
 import com.google.common.cache.CacheBuilder
-import dev.hlwgroup.ResponseCache.AcceptedStatuses
-import dev.hlwgroup.ResponseCache.CachingTime
+import com.reverenddread.ResponseCache.AcceptedStatuses
+import com.reverenddread.ResponseCache.CachingTime
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*
